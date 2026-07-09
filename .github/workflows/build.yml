@@ -13,11 +13,20 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
+    # This setup block installs Gradle onto the runner automatically
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v4
+      with:
+        gradle-version: 8.5
+
+    # This generates the missing gradlew script files
+    - name: Generate Gradle Wrapper
+      run: |
+        gradle wrapper
+        chmod +x gradlew
 
     - name: Build with Gradle
-      run: gradle assembleDebug --no-daemon
+      run: ./gradlew assembleDebug --no-daemon
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
