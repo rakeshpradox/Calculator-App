@@ -1,0 +1,6 @@
+{
+  "name": "Scientific Calculator",
+  "description": "A premium iPhone-style scientific calculator supporting trigonometry, logarithms, and complex math expressions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
